@@ -50,7 +50,7 @@ struct NoteDetailView: View {
                                 .clipShape(Circle())
                         }
                     }.sheet(isPresented: $showingModalEdit) {
-                        EditNoteModalView(title: note.title, description: note.description, note: note, actionCreater: actionCreator)
+                        EditNoteModalView(title: store.notes[index].title, description: store.notes[index].description, note: note, actionCreater: actionCreator)
                     }
                 }.padding(20)
             }
