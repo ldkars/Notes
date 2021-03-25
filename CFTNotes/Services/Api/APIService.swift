@@ -19,7 +19,7 @@ protocol APIServiceType {
     func response<Request>(from request: Request) -> AnyPublisher<Request.Response, APIServiceError> where Request: APIRequestType
     
     //MARK: -- MockData
-    func response() -> AnyPublisher<NoteResponse, Never>
+    func getNotes() -> AnyPublisher<NoteResponse, Never>
     func createNotes(newNote: Note) -> AnyPublisher<NoteResponse, Never>
     func deleteNotes(indexSet: IndexSet) -> AnyPublisher<NoteResponse, Never>
     func editNote(note: Note) -> AnyPublisher<NoteResponse, Never>
@@ -51,27 +51,27 @@ final class APIService: APIServiceType {
             .receive(on: RunLoop.main)
             .eraseToAnyPublisher()
     }
-
-    func response() -> AnyPublisher<NoteResponse, Never> {
-        return DataBaseMock.response().publisher.eraseToAnyPublisher()
+    
+    func getNotes() -> AnyPublisher<NoteResponse, Never> {
+        return DataBaseMock.notes.publisher.eraseToAnyPublisher()
     }
     
     func createNotes(newNote: Note) -> AnyPublisher<NoteResponse, Never> {
-        DataBaseMock.notes.append(newNote)
-        return DataBaseMock.response().publisher.eraseToAnyPublisher()
+        DataBaseMock.notes[0].items.append(newNote)
+        return DataBaseMock.notes.publisher.eraseToAnyPublisher()
     }
     
     func deleteNotes(indexSet: IndexSet) -> AnyPublisher<NoteResponse, Never> {
-        DataBaseMock.notes.remove(atOffsets: indexSet)
-        return DataBaseMock.response().publisher.eraseToAnyPublisher()
+        DataBaseMock.notes[0].items.remove(atOffsets: indexSet)
+        return DataBaseMock.notes.publisher.eraseToAnyPublisher()
     }
     
     func editNote(note: Note) -> AnyPublisher<NoteResponse, Never> {
-        for i in 0..<DataBaseMock.notes.count {
-            if DataBaseMock.notes[i].id == note.id{
-                DataBaseMock.notes[i] = note
+        for i in 0..<DataBaseMock.notes[0].items.count {
+            if DataBaseMock.notes[0].items[i].id == note.id{
+                DataBaseMock.notes[0].items[i] = note
             }
         }
-        return DataBaseMock.response().publisher.eraseToAnyPublisher()
+        return DataBaseMock.notes.publisher.eraseToAnyPublisher()
     }
 }
