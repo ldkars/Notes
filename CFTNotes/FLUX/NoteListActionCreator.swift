@@ -33,7 +33,7 @@ final class NoteListActionCreator {
     
     func bindData() {
         let responsePublisher = onAppearSubject
-            .flatMap { [apiService] _ in apiService.response()}
+            .flatMap { [apiService] _ in apiService.getNotes()}
         
         let responseStream = responsePublisher
             .share()
@@ -104,6 +104,7 @@ final class NoteListActionCreator {
     }
     
     func editNote(note: Note){
+        print("activate")
         editNoteSubject.send(note)
     }
 }
