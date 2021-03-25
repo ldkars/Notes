@@ -8,17 +8,13 @@
 import Foundation
 import SwiftUI
 
-struct NoteStyle {
-    var titleColor: Color?
-    var descriptionColor: Color?
-}
-
-protocol NoteType : Decodable, Hashable, Identifiable {
+protocol NoteType : Decodable, Identifiable, Hashable {
+    var id: UUID { get set }
     var title: String { get set }
     var description: String { get set }
 }
 
-struct Note: NoteType {
+struct Note: NoteType{
     var id = UUID()
     var title: String
     var description: String
