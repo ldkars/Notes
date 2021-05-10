@@ -13,7 +13,6 @@ final class NoteListStore: ObservableObject {
     static let shared = NoteListStore()
     
     @Published private(set) var notes: [Note] = []
-    @Published private(set) var folders: [Folder] = []
     @Published var isErrorShown = false
     @Published var errorMessage = ""
     @Published private(set) var shouldShowIcon = false

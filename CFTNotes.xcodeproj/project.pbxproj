@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C01D92542601816A00B1E65B /* CreateNoteModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D92532601816A00B1E65B /* CreateNoteModalView.swift */; };
 		C01D92572601888B00B1E65B /* ButtonEditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01D92562601888B00B1E65B /* ButtonEditNoteView.swift */; };
-		C06CD2F8260CC0DC005012E7 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06CD2F7260CC0DC005012E7 /* Folder.swift */; };
 		C08E1C2625FFB92B00A523C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08E1C2525FFB92B00A523C3 /* AppDelegate.swift */; };
 		C08E1C2825FFB92B00A523C3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08E1C2725FFB92B00A523C3 /* SceneDelegate.swift */; };
 		C08E1C2A25FFB92B00A523C3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C08E1C2925FFB92B00A523C3 /* ContentView.swift */; };
@@ -34,7 +33,6 @@
 /* Begin PBXFileReference section */
 		C01D92532601816A00B1E65B /* CreateNoteModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteModalView.swift; sourceTree = "<group>"; };
 		C01D92562601888B00B1E65B /* ButtonEditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonEditNoteView.swift; sourceTree = "<group>"; };
-		C06CD2F7260CC0DC005012E7 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
 		C08E1C2225FFB92B00A523C3 /* CFTNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CFTNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C08E1C2525FFB92B00A523C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C08E1C2725FFB92B00A523C3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 			children = (
 				C08E1C4A25FFBA6E00A523C3 /* Note.swift */,
 				C08E1C5E25FFBE1000A523C3 /* NoteResponse.swift */,
-				C06CD2F7260CC0DC005012E7 /* Folder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -259,7 +256,6 @@
 				C08E1C5825FFBD6100A523C3 /* APIService.swift in Sources */,
 				C08E1C2A25FFB92B00A523C3 /* ContentView.swift in Sources */,
 				C08E1C6225FFBE6400A523C3 /* NoteRequest.swift in Sources */,
-				C06CD2F8260CC0DC005012E7 /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
