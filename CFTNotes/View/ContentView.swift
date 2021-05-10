@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var store: NoteListStore = .shared
-    
     private let actionCreator: NoteListActionCreator
     
     init(actionCreator: NoteListActionCreator = .init()) {
@@ -44,7 +43,9 @@ struct ContentView: View {
                     }
                 }.navigationViewStyle(StackNavigationViewStyle())
             }
-        }.onAppear(perform: { self.actionCreator.onAppear()})
+        }.onAppear(perform: {
+            self.actionCreator.onAppear()
+        })
     }
 }
 

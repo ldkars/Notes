@@ -39,7 +39,6 @@ final class NoteListActionCreator {
             .share()
             .subscribe(responseSubject)
         
-        
         let responseCreateNotePublisher = createNoteSubject
             .flatMap { (Note) -> AnyPublisher<NoteResponse, Never> in
                 self.apiService.createNotes(newNote: Note)
@@ -94,7 +93,9 @@ final class NoteListActionCreator {
     func onAppear() {
         onAppearSubject.send(())
     }
-    
+}
+
+extension NoteListActionCreator{
     func createNote(note: Note){
         createNoteSubject.send(note)
     }

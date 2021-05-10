@@ -12,8 +12,8 @@ struct CreateNoteModalView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var title: String = ""
     @State private var description: String = ""
-    
     var actionCreater: NoteListActionCreator
+    
     var body: some View {
         VStack{
             Spacer()
