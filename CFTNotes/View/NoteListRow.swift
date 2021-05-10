@@ -10,10 +10,10 @@ import SwiftUI
 
 struct NoteListRow: View {
     var note: Note
-    let actionCreator: NoteListActionCreator
+    private let actionCreator: NoteListActionCreator
     let index: Int
     private let descriptionLength: Int = 150
-    
+        
     var body: some View {
         NavigationLink(destination: NoteDetailView(note: note, actionCreator: actionCreator, index: index)) {
             VStack{

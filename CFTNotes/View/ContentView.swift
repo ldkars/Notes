@@ -18,13 +18,7 @@ struct ContentView: View {
     var body: some View {
         ZStack{
             if store.notes.isEmpty{
-                Spacer()
-                Text("Notes not created!")
-                    .font(.title)
-                    .foregroundColor(.black)
-                    .fontWeight(.heavy)
-                ButtonCreateNoteView(actionCreater: actionCreator)
-                Spacer()
+                emptyView
             }else{
                 NavigationView{
                     ZStack{
@@ -39,9 +33,11 @@ struct ContentView: View {
                             Alert(title: Text("Error"), message: Text(store.errorMessage))
                         }
                         .navigationTitle(Text("Notes"))
-                        ButtonCreateNoteView(actionCreater: actionCreator)
+                        
+                        ButtonCreateNoteView()
                     }
                 }.navigationViewStyle(StackNavigationViewStyle())
+                
             }
         }.onAppear(perform: {
             self.actionCreator.onAppear()
@@ -49,8 +45,14 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+var emptyView: some View{
+    ZStack{
+        Spacer()
+        Text("Notes not created!")
+            .font(.title)
+            .foregroundColor(.black)
+            .fontWeight(.heavy)
+        ButtonCreateNoteView()
+        Spacer()
     }
 }

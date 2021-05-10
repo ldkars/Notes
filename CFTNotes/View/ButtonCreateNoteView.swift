@@ -9,9 +9,12 @@ import Foundation
 import SwiftUI
 
 struct ButtonCreateNoteView: View {
-    
     @State var showingModalCreate = false
-    let actionCreater: NoteListActionCreator
+    let actionCreator: NoteListActionCreator
+    
+    init(actionCreator: NoteListActionCreator = .init()) {
+        self.actionCreator = actionCreator
+    }
     
     var body: some View {
         VStack{
@@ -30,7 +33,7 @@ struct ButtonCreateNoteView: View {
                         )
                         .clipShape(Circle())
                 }.sheet(isPresented: $showingModalCreate) {
-                    CreateNoteModalView(actionCreater: actionCreater)
+                    CreateNoteModalView(actionCreater: actionCreator)
                 }
             }.padding(20)
         }
